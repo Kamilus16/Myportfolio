@@ -31,26 +31,75 @@ nav {
   align-items: center;
   padding: 0 50px;
   height: 80px;
+
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 nav .left a {
-    color var(--text-color);
-    font-size: 22px;
-    font-weight: 700;
+    font-size: 26px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, #4a76ee, #36d1dc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    position: relative;
 }
+
+
+nav .left a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(45deg, #4a76ee, #36d1dc);
+  transition: width 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+
+nav .left a:hover::after {
+  width: 100%;
+}
+
+
 
 nav .right a {
-    color var(--text-color);
-    margin : 0 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 18px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    color: #fff;
+    background: linear-gradient(135deg, #0077b5, #00a0dc);
 }
+
+nav .right a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
 
 nav .right a:last-child {
-    color var(--background-color);
-    background-color: var(--text-color);
-    padding : 5px 15px;
-    border-radius: 5px;
+   background: linear-gradient(135deg, #0077b5, #00a0dc);
+   color: var(#fff);
+  
 }
 
+
+nav .right a:last-child:hover {
+  background-color: var(--text-color);
+  color: #fff;
+}
 nav .right a span {
   margin-left: 5px;
 }
@@ -66,7 +115,7 @@ nav .right a span {
 }
 
 .hero-section .text {
-  flex: 5:
+  flex: 5;
 }
 
 .hero-section .text h2 {
@@ -136,6 +185,13 @@ nav .right a span {
   border: 1.5px solid #d3d3d3;
   border-radius: 5px;
 }
+
+.skills-section .cells .cell:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+}
+
 .skills-section .cells .cell span {
   font-size: 18px;
 
@@ -335,7 +391,7 @@ nav .right a span {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    align -items: center;
+    align-items: center;
   }
 
   .hero-section .text .links a {
@@ -343,6 +399,7 @@ nav .right a span {
     width: 80%;
     text-align: center;
   }
+
 
 }
 
@@ -362,10 +419,12 @@ nav .right a span {
   text-decoration: none;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+  background-size: 200% auto;
+  transition: 0.4s ease-in-out;
 }
 
 .resume-btn:hover {
   background: linear-gradient(45deg, #000, #ff4b2b);
-  transform: scale();
-
+  transform: scale(1.05);
+  background-position: right center;
 }
